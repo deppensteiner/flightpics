@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: -webkit-linear-gradient(-45deg, #8363a1 0%, #74a8c3 100%);
+  background: linear-gradient(135deg, #8363a1 0%, #74a8c3 100%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.Content { margin: 30px; }
+
+.post {
+  font-size: 14px;
+  color: white;
+  width: 100%;
+  clear: both;
+  box-sizing: border-box;
+}
+.post-inner {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.post .title {
+  font-size: 22px;
+  font-weight: 100;
+  color: white;
+  display: block;
+  margin-top: 5px;
+  padding-right: 15px;
+}
+.post .description {
+  display: block;
+  padding: 10px 15px 10px 0px;
+}
+.post img {
+  display: block;
+  width: 100%;
+}
+.post .caret {
+  position: absolute;
+  top: 12px;
+  right: -16px;
+  font-size: 30px;
+}
+.post .date {
+  font-size: 11px;
+  font-weight: bold;
+}
+.post:nth-child(even) .caret { left: -13px; }
+.post:nth-child(even) .post-inner .caret:before { content: "\F0DA"; }
+
+.post:nth-child(even) .post-inner{
+  float: right;
+  box-shadow: inset 3px 0px white;
+  padding-left: 20px;
+}
+.post:nth-child(odd) .post-inner {
+  box-shadow: 3px 0px white;
+  padding-right: 20px;
+}
