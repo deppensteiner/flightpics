@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-require('font-awesome/css/font-awesome.css');
 
 class Icon extends Component {
 

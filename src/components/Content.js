@@ -3,8 +3,6 @@ import axios from 'axios';
 
 import Post from './Post';
 
-const moment = require('moment');
-
 class Content extends Component {
 
   constructor(props) {

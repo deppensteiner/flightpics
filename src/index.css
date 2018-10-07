@@ -14,7 +14,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.Content { margin: 30px; }
+.App { max-width: 1000px; }
+.Content { margin: 30px; margin-bottom: 0; overflow: hidden; }
 
 .post {
   font-size: 14px;
@@ -66,4 +67,12 @@ code {
 .post:nth-child(odd) .post-inner {
   box-shadow: 3px 0px white;
   padding-right: 20px;
+}
+.footer-plane-icon {
+  font-size: 35px;
+  color: white;
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  padding-left: 6px;
 }
