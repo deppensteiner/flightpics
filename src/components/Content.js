@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import Post from './Post';
 
+const moment = require('moment');
+
 class Content extends Component {
 
   constructor(props) {
@@ -25,6 +27,10 @@ class Content extends Component {
   }
 
   sortPosts(posts) {
+    debugger
+    posts.sort(function(a,b){
+      return new Date(moment(b.date, "DD/MM/YYYY")) - new Date(moment(a.date, "DD/MM/YYYY"));
+    });
     return posts;
   }
 
