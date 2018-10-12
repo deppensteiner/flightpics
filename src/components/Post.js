@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Icon from './Icon';
-
-const moment = require('moment');
+import Card from './Card';
 
 class Header extends Component {
 
@@ -10,20 +9,24 @@ class Header extends Component {
     this.state = { item: this.props.data };
   }
 
-  parseDate(date) {
-    return moment(date).format("DD. MMM. YYYY")
-  }
-
   render() {
     const item = this.state.item;
     return (
       <div className="post">
-        <div className="post-inner">
-          <Icon className="caret" id="caret-left" /> 
-          <label className="title">{item.title}</label>
-          <span className="date">{this.parseDate(item.date)}</span>
+        <div className="post-inner-container post-inner">
+          <Icon className="caret-left" id="caret-left" /> 
+          <Icon className="caret-right" id="caret-right" /> 
+          <Card
+            id={item.id}
+            title={item.title}
+            date={item.date}
+            departure={item.departure}
+            arrival={item.arrival}
+            imageURL={item.imageURL}
+          />
+        </div>
+        <div className="post-inner-container post-description">
           <span className="description">{item.description}</span>
-          <img src={item.imageURL} alt={item.title} />
         </div>
       </div>
     );

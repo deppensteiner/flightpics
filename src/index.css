@@ -16,6 +16,10 @@ code {
 
 .App { max-width: 1000px; }
 .Content { margin: 30px; margin-bottom: 0; overflow: hidden; }
+.Footer {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
 
 .post {
   font-size: 14px;
@@ -23,12 +27,19 @@ code {
   width: 100%;
   clear: both;
   box-sizing: border-box;
+  position: relative;
 }
-.post-inner {
+.post-inner-container {
   width: 50%;
   padding: 10px;
   box-sizing: border-box;
   position: relative;
+}
+.post .post-description {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding-left: 20px;
 }
 .post .title {
   font-size: 22px;
@@ -46,19 +57,52 @@ code {
   display: block;
   width: 100%;
 }
-.post .caret {
+.post .caret-left {
   position: absolute;
   top: 12px;
   right: -16px;
   font-size: 30px;
 }
+.post .caret-right {
+  position: absolute;
+  top: 12px;
+  right: -26px;
+  font-size: 30px;
+}
+.post:nth-child(even) .caret-left { left: -22px; }
+.post:nth-child(even) .caret-right { left: -12px; }
 .post .date {
   font-size: 11px;
   font-weight: bold;
+  position: absolute;
+  top: 0;
+  background: #00000042;
+  color: WHITE;
+  padding: 10px;
 }
-.post:nth-child(even) .caret { left: -13px; }
-.post:nth-child(even) .post-inner .caret:before { content: "\F0DA"; }
-
+.post:nth-child(odd) .post-inner .date {
+  border-bottom-left-radius: 10px;
+  right: 0px;
+}
+.post:nth-child(even) .post-inner .date {
+  border-bottom-right-radius: 10px;
+  left: 0px;
+}
+.post:nth-child(even) .post-description {
+  position: absolute;
+  right: 0;
+  left: 0;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+.post .departure,
+.post .arrival {
+  display: inline-block;
+  font-size: 11px;
+}
+.post .arrival {
+  padding-left: 10px;
+}
 .post:nth-child(even) .post-inner{
   float: right;
   box-shadow: inset 3px 0px white;
@@ -74,5 +118,27 @@ code {
   display: block;
   margin: 0 auto;
   padding: 10px;
-  padding-left: 6px;
+  padding-left: 13px;
+  transform: rotate(-45deg);
+}
+.card-container {
+  position: relative;
+  box-shadow: 2px 2px #0c0c0c40;
+}
+.card-container-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-color: #000000b3;
+  right: 0;
+}
+.card-container-text,
+.card-container .date {
+  opacity: 1;
+}
+.card-container.hover .date,
+.card-container.hover .card-container-text {
+  opacity: 0.2;
 }

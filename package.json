@@ -26,7 +26,6 @@
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.11.1",
     "file-loader": "2.0.0",
-    "font-awesome": "^4.7.0",
     "fs-extra": "7.0.0",
     "html-webpack-plugin": "4.0.0-alpha.2",
     "identity-obj-proxy": "3.0.0",
@@ -109,5 +108,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.3.1"
   }
 }
