@@ -1,0 +1,21 @@
+@media (max-width: 747px) {
+
+  .Content { margin: 0; }
+  
+  .post:nth-child(even) .post-inner { float: left; }
+  .post:nth-child(odd) .post-inner .date { right: auto; left: 0;}
+
+  .post-inner-container {
+    width: 100%;
+  }
+
+  .post .description { 
+    display: none;
+  }
+
+  .post .caret-left,
+  .post .caret-right {
+    display: none;
+  }
+
+}
