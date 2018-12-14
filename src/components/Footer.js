@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Icon from './Icon';
 
 class Footer extends Component {
   render() {
     return (
-      <div className="Footer" />
+      <div className="Footer">
+        <span className="copyright">© {(new Date().getFullYear())} by Daniel Eppensteiner</span>
+      </div>
     );
   }
 }

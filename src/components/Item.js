@@ -23,6 +23,7 @@ class Header extends Component {
             departure={item.departure}
             arrival={item.arrival}
             imageURL={item.img.url}
+            detailView={this.props.onDetailView}
           />
         </div>
         <div className="post-inner-container post-description">

@@ -42,6 +42,9 @@ class Card extends Component {
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
         />
+        <div className="more-link" onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} >
+          <span onClick={e => this.props.detailView(this.state.id, e)}><Icon id="images" /> FOTOS</span>
+        </div>
         <span className="date">
             <Icon id="calendar" /> {this.parseDate(this.state.date)}
           </span>
