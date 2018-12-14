@@ -1,4 +1,3 @@
-'use strict';
 
 const path = require('path');
 const webpack = require('webpack');
@@ -382,11 +381,6 @@ module.exports = {
   // our own hints via the FileSizeReporter
   performance: false,
   devServer: {
-    proxy: {
-      '/api/*': {
-          target: 'http://localhost:3000/static/fixtures/',
-          secure: false
-      }
-    },
+    proxy: {},
   },
 };

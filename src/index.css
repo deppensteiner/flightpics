@@ -1,3 +1,6 @@
+html {
+  height: 100%;
+}
 body {
   margin: 0;
   padding: 0;
@@ -66,7 +69,7 @@ code {
 .post .caret-right {
   position: absolute;
   top: 12px;
-  right: -26px;
+  right: -25px;
   font-size: 30px;
 }
 .post:nth-child(even) .caret-left { left: -22px; }

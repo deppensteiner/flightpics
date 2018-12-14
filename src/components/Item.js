@@ -6,7 +6,7 @@ class Header extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { item: this.props.data };
+    this.state = { item: this.props.item };
   }
 
   render() {
@@ -22,7 +22,7 @@ class Header extends Component {
             date={item.date}
             departure={item.departure}
             arrival={item.arrival}
-            imageURL={item.imageURL}
+            imageURL={item.img.url}
           />
         </div>
         <div className="post-inner-container post-description">

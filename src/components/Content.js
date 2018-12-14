@@ -1,42 +1,34 @@
-import React, { Component } from 'react';
-import axios from 'axios';
 
-import Post from './Post';
+import React, { Component } from 'react';
+import ApolloClient from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import { createHttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
+import Items from './Items';
 
 class Content extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { posts: [] };
 
-    this.fetchData = this.fetchData.bind(this);
-
-    this.fetchData();
-  }
-
-  fetchData() {
-    const that = this;
-    axios.get(`https://my-json-server.typicode.com/deppensteiner/flightpics/posts`)
-      .then(res => {
-        that.setState({ posts: res.data });
-      })
-      .catch(error => {
-      })
-  }
-
-  sortPosts(posts) {
-    posts.sort(function(a,b){
-      return new Date(b.date) - new Date(a.date);
+    const httpLink = createHttpLink({
+      uri: 'https://api-euwest.graphcms.com/v1/cjpmc21jv2rcq01fkewd5496k/master',
     });
-    return posts;
-  }
+    
+    this.client = new ApolloClient({
+      link: httpLink,
+      cache: new InMemoryCache()
+    });
 
+  }
+  
   render() {
     return (
       <div className="Content">
-        { this.sortPosts(this.state.posts).map(item => (
-          <Post key={item.id} data={item} />
-        ))}
+        <ApolloProvider client={this.client}>
+          <Items />
+        </ApolloProvider>
       </div>
     );
   }
