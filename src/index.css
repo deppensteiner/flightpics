@@ -14,7 +14,7 @@ body {
 }
 
 .App { max-width: 1000px; }
-.Content { margin: 30px; margin-bottom: 0; overflow: hidden; }
+.Content { margin: 30px; margin-bottom: 0; overflow: hidden;min-width: 350px;}
 .Footer {
   overflow: hidden;
   margin-bottom: 10px;
@@ -94,12 +94,14 @@ padding-right: 15px;
 }
 
 .footer-plane-icon {
-  font-size: 35px;
+  font-size: 20px;
   color: white;
   display: block;
   margin: 0 auto;
   padding: 10px;
   padding-left: 13px;
+}
+.rotate-45 {
   transform: rotate(-45deg);
 }
 .card-container {
@@ -157,7 +159,6 @@ padding-right: 15px;
     padding-right: 20px;
     padding-left: 10px;
   }
-
   .post:nth-child(even) .post-inner{
     float: right;
     box-shadow: inset 3px 0px white;
@@ -167,5 +168,4 @@ padding-right: 15px;
     box-shadow: 3px 0px white;
     padding-right: 20px;
   }
-
 }
