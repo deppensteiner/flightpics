@@ -22,7 +22,7 @@ class Header extends Component {
             date={item.date}
             departure={item.departure}
             arrival={item.arrival}
-            imageURL={item.img.url}
+            imageURL={item.titleImage.url}
             detailView={this.props.onDetailView}
           />
         </div>

@@ -1,10 +1,8 @@
 
 import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 import Item from './Item';
-import Loading from './Loading'
 import Details from './Details';
+import Loading from './Loading';
 
 class Items extends Component {
 
@@ -12,23 +10,8 @@ class Items extends Component {
     super(props);
     this.state = {
       openById: null,
-    }
-    this.CONTENT_QUERY = gql`
-      {
-        flightses {
-          id
-          date
-          title
-          departure
-          arrival
-          description
-          img {
-            id
-            url
-          }
-        }
-      }
-    `;
+      data: this.props.data,
+    };
     
     this.openDetailViewer = this.openDetailViewer.bind(this);
     this.closeDetailViewer = this.closeDetailViewer.bind(this);
@@ -43,31 +26,22 @@ class Items extends Component {
   }
 
   render() {
+    if (!this.state.data) return <Loading />
     return (
-      <Query query={this.CONTENT_QUERY}>
-        {({ loading, error, data }) => {
-          if (loading) return <Loading />
-          if (error) return <div>Error</div>
-
-          return (
-            <div>
-                {
-                  this.state.openById ?
-                    <Details id={this.state.openById.id} closeDetailViewer={this.closeDetailViewer} />
-                  :
-                    <div />
-                }
-                {
-                    data.flightses.map((currentItem, key) => (
-                    <Item key={key} item={currentItem} onDetailView={this.openDetailViewer} />
-                  ))
-                }
-            </div>
-          );
-   
-        }}
-      </Query>
-    )  
+      <div>
+          {
+            this.state.openById ?
+              <Details id={this.state.openById.id} closeDetailViewer={this.closeDetailViewer} />
+            :
+              <div />
+          }
+          {
+              this.state.data.map((currentItem, key) => (
+              <Item key={key} item={currentItem} onDetailView={this.openDetailViewer} />
+            ))
+          }
+      </div>
+    )
   }
 }
 
