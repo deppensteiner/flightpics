@@ -27,7 +27,7 @@ class Header extends Component {
           />
         </div>
         <div className="post-inner-container post-description">
-          <span className="description">{item.description}</span>
+          <span className="description" dangerouslySetInnerHTML={{__html: item.description}} />
         </div>
       </div>
     );
